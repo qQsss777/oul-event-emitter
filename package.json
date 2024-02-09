@@ -1,0 +1,71 @@
+{
+  "name": "oul-event-emitter",
+  "author": {
+    "name" : "Marc Le Moigne"
+  },
+  "license": "MIT",
+  "keywords": [
+    "event",
+    "emitter",
+    "esm"
+  ],
+  "version": "0.0.0",
+  "type": "module",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "import": "./dist/index.js"
+    }
+  },
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc && vite build",
+    "preview": "vite preview",
+    "test": "jest",
+    "test:coverage": "jest --coverage",
+    "prepare": "husky install",
+    "cm": "npx cz",
+    "cm:wip": "git commit -m 'WIP'",
+    "pre-commit": "lint-staged",
+    "build:changelog": "npx auto-changelog -p",
+    "build:doc": "npx typedoc",
+    "version": "npm run test:coverage && npm run build:changelog && npm run build:doc && git add .",
+    "version:major": "npm version --commit-hooks false major",
+    "version:minor": "npm version --commit-hooks false minor",
+    "version:patch": "npm version --commit-hooks false patch",
+    "postversion": "git push && git push --tags",
+    "pack": "npm run build && npm pack"
+  },
+  "devDependencies": {
+    "@rollup/plugin-terser": "^0.4.4",
+    "@rollup/plugin-typescript": "^11.1.5",
+    "@types/jest": "^29.5.8",
+    "@types/node": "^20.9.0",
+    "@typescript-eslint/eslint-plugin": "^6.11.0",
+    "@typescript-eslint/parser": "^6.11.0",
+    "auto-changelog": "^2.4.0",
+    "commitizen": "^4.3.0",
+    "cz-conventional-changelog": "^3.3.0",
+    "eslint": "^8.54.0",
+    "husky": "^8.0.3",
+    "jest": "^29.7.0",
+    "lint-staged": "^15.1.0",
+    "prettier": "^3.1.0",
+    "ts-jest": "^29.1.1",
+    "tslib": "^2.6.2",
+    "typedoc": "^0.25.3",
+    "typedoc-plugin-rename-defaults": "^0.7.0",
+    "typescript": "^5.2.2",
+    "vite": "^4.4.5",
+    "vite-plugin-dts": "^3.6.3"
+  },
+  "config": {
+    "commitizen": {
+      "path": "./node_modules/cz-conventional-changelog"
+    }
+  }
+}

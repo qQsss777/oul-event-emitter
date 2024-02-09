@@ -1,0 +1,13 @@
+{
+  "name": "Documentation Event Emitter",
+  "entryPointStrategy": "expand",
+  "entryPoints": ["src"],
+  "out": "./documentation",
+  "githubPages": false,
+  "cacheBust": true,
+  "disableSources": true,
+  "hideParameterTypesInTitle": true,
+  "categorizeByGroup": false,
+  "exclude": ["./src/**/*.test.ts"],
+  "plugin": ["typedoc-plugin-rename-defaults"]
+}
